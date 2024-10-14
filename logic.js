@@ -65,3 +65,12 @@ const scoreDiv = document.querySelector(".score");
 const btnRock = document.createElement("button");
 const btnPaper = document.createElement("button");
 const btnScissors = document.createElement("button");
+
+btnRock.addEventListener("click", playRound("rock", getComputerChoice()));
+btnPaper.addEventListener("click", playRound("paper", getComputerChoice()));
+btnScissors.addEventListener("click", playRound("scissors", getComputerChoice()));
+
+btnDiv.appendChild(btnRock);
+btnDiv.appendChild(btnPaper);
+btnDiv.appendChild(btnScissors);
+
