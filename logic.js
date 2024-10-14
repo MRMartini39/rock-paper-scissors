@@ -51,13 +51,17 @@ function playGame() {
         }
     }
 
-    for (let i = 0; i < 5; i++) {
-        console.log(playRound(getHumanChoice(), getComputerChoice()));
-        console.log("The score is " 
-            + humanScore.toString() 
-            + " - " 
-            + computerScore.toString());
-    }
-
     
+    console.log(playRound(getHumanChoice(), getComputerChoice()));
+    console.log("The score is " 
+        + humanScore.toString() 
+        + " - " 
+        + computerScore.toString()); 
 }
+
+const btnDiv = document.querySelector(".buttons");
+const scoreDiv = document.querySelector(".score");
+
+const btnRock = document.createElement("button");
+const btnPaper = document.createElement("button");
+const btnScissors = document.createElement("button");
