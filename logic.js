@@ -14,9 +14,7 @@ function getComputerChoice() {
     return "scissors";
 }
 
-function playGame() {
-    let humanScore = 0;
-    let computerScore = 0;
+
     function playRound(humanChoice, computerChoice) {
         if (humanChoice == "rock") {
             if (computerChoice == "paper") {
@@ -51,24 +49,23 @@ function playGame() {
         }
     }
 
-    
-    console.log(playRound(getHumanChoice(), getComputerChoice()));
-    console.log("The score is " 
-        + humanScore.toString() 
-        + " - " 
-        + computerScore.toString()); 
-}
-
 const btnDiv = document.querySelector(".buttons");
 const scoreDiv = document.querySelector(".score");
+const resultDiv = document.querySelector(".result");
 
 const btnRock = document.createElement("button");
 const btnPaper = document.createElement("button");
 const btnScissors = document.createElement("button");
 
-btnRock.addEventListener("click", playRound("rock", getComputerChoice()));
-btnPaper.addEventListener("click", playRound("paper", getComputerChoice()));
-btnScissors.addEventListener("click", playRound("scissors", getComputerChoice()));
+btnRock.addEventListener("click", () => {
+    resultDiv.textContent = playGame("rock", getComputerChoice());
+});
+btnPaper.addEventListener("click", () => {
+   resultDiv.textContent = playGame("paper", getComputerChoice());
+});
+btnScissors.addEventListener("click", () => {
+    resultDiv.textContent = playGame("scissors", getComputerChoice());
+});
 
 btnDiv.appendChild(btnRock);
 btnDiv.appendChild(btnPaper);
